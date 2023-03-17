@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,400&display=swap");
+
+:root {
+  --poppins-font: 'Poppins', sans-serif;
+  --dark-color: #1a1a1a;
+  --green-color: #22BA1A;
+  --light-color: #ffffff;
+  --grey-color: #b0b0b0;
+  --yellow-color: #f2c10e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+    font-size: 1.7rem;
+    min-height: 100vh;
+    background: var(--dark-color);
+    background-image: url(/img/star-wars-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    line-height: 1.6;
+    font-family: var(--poppins-font);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+}
+
+button, input {
+  font-family: inherit;
+  font-size: 1.8rem;
+  outline: 0;
+  border: none;
+  background-color: transparent;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.main-wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app {
+  background-color: var(--dark-color);
+  margin: 2rem;
+  padding: 5rem;
+  border-radius: 10px;
+  color: var(--light-color);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.app-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+
+.app-header-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.app-header-title span {
+  color: var(--yellow-color);
+}
+
+.app-header-search {
+  border: 2px solid var(--grey-color);
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.app-header-search .form-control {
+  min-width: 450px;
+  color: var(--light-color);
+}
+
+.app-header-search .search-button{
+  color: var(--grey-color);
+  font-size: 2.3rem;
+  cursor: pointer;
+}
+
+.app-header .reload-button{
+  color: var(--light-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+
+/* ----- SEARCH LIST ----- */
+
+/* Making a list os items "inside" the search bar */
+
+.search-list {
+  z-index: 10;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 0;
+  background-color: #121212;
+  width: 100%;
+  max-height: 400px;
+  padding-left: 2rem;
+}
+
+.search-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.search-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-list::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--yellow-color);
+}
+
+.search-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  background-color: #121212;
+  padding: 0.4rem 0;
+}
+
+/* .search-list-item img {
+  width: 50px;
+  margin-right: 2rem;
+} */
+
+.search-list-item p {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-control input,
+input::placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--light-color);
+}
+
+/* ----- END OF SEARCH LIST ----- */
+
+/* ----- APP BODY ----- */
+
+.app-body {
+  margin-top: 4rem;
+  height: 670px;
+  overflow-y: scroll;
+}
+
+.app-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* .app-body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+} */
+
+.app-body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--yellow-color);
+}
+
+/* ----- END OF APP BODY ----- */
+
+/* ----- APP BODY TABS ----- */
+
+.app-body-tabs-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding-bottom: 1.6rem;
+  margin: 2.4rem 0;
+}
+
+.tab-head-single {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.9rem;
+  color: var(--light-color);
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.tab-head-single:hover {
+  opacity: 0.9;
+}
+
+.tab-head-single.active-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 100%;
+  height: 4px;
+  background-color: var(--yellow-color);
+}
+
+/* ----- END OF APP BODY TABS ----- */
+
+/* ----- APP BODY CONTENT ----- */
+
+.app-body-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  -webkit-column-gap: 4rem;
+     -moz-column-gap: 4rem;
+          column-gap: 4rem;
+  margin-right: 2rem;
+}
+
+.app-body-content-thumbnail {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  width: 100%;
+  height: 670px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.app-body-content-list .name {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--yellow-color);
+}
+
+.app-body-tabs-body {
+  margin-top: 3.6rem;
+}
+
+/* ----- END OF APP BODY CONTENT ----- */
+
+/* ----- APP ATTRIBUTES TAB ----- */
+
+.attributes {
+  display: none;
+}
+
+.attributes li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  margin: 1.1rem auto;
+  padding: 0.9rem;
+  -webkit-box-shadow: 0px 1px 0 0px var(--grey-color);
+          box-shadow: 0px 1px 0px 0px var(--grey-color);
+}
+
+.attributes li div i {
+  color: var(--yellow-color);
+  font-size: 5px;
+}
+
+.attributes li div span {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-radius: 7px;
+  padding: 0 1.2rem;
+  margin: 0 1.6rem;
+  opacity: 1;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.attributes li > span {
+  color: var(--yellow-color);
+  font-weight: 700;
+}
+
+/* ----- END OF APP ATTRIBUTES TAB ----- */
+
+/* ----- APP VEHICLES TAB ----- */
+
+/* .vehicles {
+  display: none;
+}
+
+.vehicles li {
+  margin: 3.4rem 0;
+}
+
+.vehicles li span {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+
+.vehicles li span:first-child {
+  font-weight: 600;
+  color: var(--grey-color);
+  margin-right: 1rem;
+}
+
+.vehicles li span:last-child {
+  font-weight: 300;
+} */
+
+.vehicles {
+  display: none;
+}
+
+.vehicles li span:first-child {
+  display: block;
+  font-weight: 600;
+  color: var(--grey-color);
+  margin: 1.6rem 0 1.6rem 4rem;
+  position: relative;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-top: 3.6rem;
+}
+
+.vehicles li span:first-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -40px;
+  height: 3px;
+  width: 30px;
+  background-color: var(--yellow-color);
+}
+
+.vehicles li span:last-child {
+  letter-spacing: 1px;
+  line-height: 1.9rem;
+}
+
+/* ----- END OF APP VEHICLES TAB ----- */
+
+/* ----- APP STARSHIPS TAB ----- */
+
+/* .starships {
+  display: none;
+}
+
+.starships li {
+  margin: 3.2rem 0;
+  display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+        -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.starships li span:first-child i {
+  color: var(--yellow-color);
+  margin-right: 1.4rem;
+}
+
+.starships li span:first-child {
+  text-transform: capitalize;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 4rem;
+}
+
+.starships li span:last-child {
+  font-weight: 600;
+  text-transform: capitalize;
+  background-color: var(--green-color);
+  border-radius: 2rem;
+  padding: 0 1rem;
+  text-align: right;
+} */
+
+.starships {
+  display: none;
+}
+
+.starships li span:first-child {
+  display: block;
+  font-weight: 600;
+  color: var(--grey-color);
+  margin: 1.6rem 0 1.6rem 4rem;
+  position: relative;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-top: 3.6rem;
+}
+
+.starships li span:first-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -40px;
+  height: 3px;
+  width: 30px;
+  background-color: var(--yellow-color);
+}
+
+.starships li span:last-child {
+  letter-spacing: 1px;
+  line-height: 1.9rem;
+}
+
+/* ----- END OF APP STARSHIPS TAB ----- */
+
+/* ----- APP FILMS TAB ----- */
+
+.films {
+  display: none;
+}
+
+.films li span:first-child {
+  display: block;
+  font-weight: 600;
+  color: var(--grey-color);
+  margin: 1.6rem 0 1.6rem 4rem;
+  position: relative;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-top: 3.6rem;
+}
+
+.films li span:first-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -40px;
+  height: 3px;
+  width: 30px;
+  background-color: var(--yellow-color);
+}
+
+.films li span:last-child {
+  letter-spacing: 1px;
+  line-height: 1.9rem;
+}
+
+/* ----- END OF APP FILMS TAB ----- */
+
+/* ----- APP SHOW TAB ----- */
+
+.show-tab{
+    display: block;
+}
+
+/* ----- END OF APP SHOW TAB ----- */
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (max-width: 1200px){
+    .app-body-content{
+        grid-template-columns: 1fr 3fr;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .app-body-content-thumbnail {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .tab-head-single{
+        margin: 1.5rem 0;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .app-body-content-list .name{
+        text-align: center;
+        margin-top: 1.8rem;
+    }
+
+    .app-body-content{
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+        max-width: 680px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .app-body-content-thumbnail{
+        max-width: 480px;
+        max-height: 670px;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 992px){
+    .app{
+        padding: 5rem 0;
+    }
+    .app-header{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .app-header-search{
+        margin-top: 2.8rem;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    .app-body{
+      margin: 5rem 0 0 0;
+    }
+
+    .app-body-tabs-head{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .app-header-search{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .app-header-search .form-control{
+        min-width: auto;
+        color: var(--light-color);
+    }
+
+    .app-header-search .search-button{
+        padding-left: 2rem;
+    }
+
+    .app-body-tabs-body{
+        margin: 3rem;
+    }
+
+    .app-body-content-list .name{
+      margin: 0;
+    }
+
+    .app-body-content-thumbnail{
+      max-width: 280px;
+      max-height: 600px;
+    }
+
+    .app-body-content-thumbnail img{
+      transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 670px){
+  .app{
+      padding: 1.5rem;
+  }
+
+  .app-body-content-thumbnail{
+    max-height: 490px;
+  }
+
+  .app-body-content-thumbnail img{
+    transform: translate(0);
+}
+}
+
+/* ----- END OF MEDIA QUERIES ----- */
